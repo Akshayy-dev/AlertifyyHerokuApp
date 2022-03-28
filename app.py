@@ -78,7 +78,12 @@ def start(message):
     if message.chat.type == "private":
         # print(message.chat.id)
         bot.reply_to(message,
-                     "Please follow the instructions on the Alertifyy app to add Alertifyy Bot in your group or channel.\n\nInstall the from: http://google.com/")
+                     "Please do follow the instructions on the Alertifyy app to add Alertifyy Bot in your group or channel.\n\nInstall the from: http://google.com/")
 
 
-bot.infinity_polling()
+def main():
+    bot.infinity_polling()
+
+
+if __name__ == '__main__':
+    main()
