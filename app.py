@@ -18,7 +18,7 @@ def getchatid(update, context):
 
     context.bot.sendMessage(update.effective_message.chat_id, update.effective_message.chat_id)
 
-    if "/details" in str(update.effective_message.text):
+    if "/getchatid" in str(update.effective_message.text):
         context.bot.sendMessage(update.effective_message.chat_id, update.effective_message.chat_id)
 
 
