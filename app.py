@@ -16,7 +16,7 @@ def getchatid(update, context):
     print(update.message.chat_id)
     # if update.message.cha != "private":
 
-    context.bot.send_message(update.message.chat_id, update.message.chat_id)
+    context.bot.send_message(update.effective_message.chat_id, update.effective_message.chat_id)
 
 
 def error(update, context):
@@ -29,7 +29,7 @@ def main():
     dp = updater.dispatcher
 
     dp.add_handler(CommandHandler("start", start, filters=Filters.private))
-    dp.add_handler(CommandHandler("getchatid", getchatid,filters=Filters.group))
+    dp.add_handler(CommandHandler("getchatid", getchatid))#,filters=Filters.group))
 
     dp.add_error_handler(error)
 
