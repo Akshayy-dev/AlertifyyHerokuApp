@@ -81,4 +81,4 @@ def start(message):
                      "Please follow the instructions on the Alertifyy app to add Alertifyy Bot in your group or channel.\n\nInstall the from: http://google.com/")
 
 
-bot.polling()
+bot.infinity_polling()
