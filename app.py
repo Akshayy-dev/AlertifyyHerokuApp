@@ -17,7 +17,9 @@ def getchatid(update, context):
     # if update.message.cha != "private":
 
     context.bot.sendMessage(update.effective_message.chat_id, update.effective_message.chat_id)
-    context.bot.sendMessage(update.effective_chat, update.effective_message.chat_id)
+
+    if "/details" in str(update.effective_message.text):
+        context.bot.sendMessage(update.effective_message.chat_id, update.effective_message.chat_id)
 
 
 def error(update, context):
@@ -31,7 +33,7 @@ def main():
 
     dp.add_handler(CommandHandler("start", start, filters=Filters.private))
     dp.add_handler(CommandHandler("getchatid", getchatid))  # ,filters=Filters.group))
-    #dp.add_handler(MessageHandler(Filters.text, getchatid))
+    dp.add_handler(MessageHandler(Filters.text, getchatid))
     dp.add_error_handler(error)
 
     updater.start_webhook(listen="0.0.0.0",
