@@ -17,7 +17,7 @@ def getchatid(update, context):
     # if update.message.cha != "private":
 
     context.bot.sendMessage(update.effective_message.chat_id, update.effective_message.chat_id)
-    context.bot.sendMessage(update.channel_post, update.channel_post)
+    context.bot.sendMessage(update.effective_chat, update.effective_chat)
 
 
 def error(update, context):
