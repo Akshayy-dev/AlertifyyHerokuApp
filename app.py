@@ -29,7 +29,7 @@ def main():
     dp = updater.dispatcher
 
     dp.add_handler(CommandHandler("start", start, filters=Filters.private))
-    dp.add_handler(CommandHandler("getchatid", getchatid))
+    dp.add_handler(CommandHandler("getchatid", getchatid,filters=Filters.group))
 
     dp.add_error_handler(error)
 
