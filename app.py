@@ -23,7 +23,7 @@ def getchatid(update, context):
     # print(channel_id)
     # context.bot.send_message(channel_id, text="example")
 
-    context.bot.send_message(chat_id=update.effective_chat.id, text=update.effective_chat.id)
+    #context.bot.sendMessage(chat_id=update.effective_chat.id, text=update.effective_chat.id)
 
     # api = f'https://api.telegram.org/bot{TOKEN}/sendMessage?chat_id={channel_id}&text={"text"}'
     # response = requests.get(api).json()
