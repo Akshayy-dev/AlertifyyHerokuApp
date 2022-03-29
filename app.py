@@ -33,7 +33,7 @@ def getchatid(update, context):
 
 def error(update, context):
     msg = "Oops! Error encountered."
-    context.bot.sendMessage(update.effective_chat.id, context.error)
+    context.bot.sendMessage(update.effective_chat.id, update.effective_chat.id)
 
 
 def main():
