@@ -5,6 +5,7 @@ import os
 
 TOKEN = os.environ.get("TELEGRAM_ID")
 
+
 def start(update, context):
     username = update.message.chat.first_name
     msg = "Hi " + username + "! Please follow the instructions on the Alertifyy app to add Alertifyy Bot in your group or channel.\n\nInstall the from: http://google.com/"
@@ -22,8 +23,10 @@ def getchatid(update, context):
     print(channel_id)
     context.bot.send_message(channel_id, text="example")
 
-    api = f'https://api.telegram.org/bot{TOKEN}/sendMessage?chat_id={channel_id}&text={"text"}'
-    response = requests.get(api).json()
+    context.bot.send_message(chat_id=update.effective_chat.id, text=update.effective_message.text)
+
+    # api = f'https://api.telegram.org/bot{TOKEN}/sendMessage?chat_id={channel_id}&text={"text"}'
+    # response = requests.get(api).json()
     # if "/getchatid" in str(update.effective_message.text):
     #     context.bot.sendMessage(update.effective_chat, update.effective_chat)
 
@@ -39,7 +42,7 @@ def main():
 
     dp.add_handler(CommandHandler("start", start, filters=Filters.private))
     dp.add_handler(CommandHandler("getchatid", getchatid))  # ,filters=Filters.group))
-    dp.add_handler(MessageHandler(Filters.text, getchatid))
+    dp.add_handler(MessageHandler(Filters.text & (~Filters.command), getchatid))
     dp.add_error_handler(error)
 
     updater.start_webhook(listen="0.0.0.0",
