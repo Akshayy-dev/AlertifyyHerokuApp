@@ -19,9 +19,9 @@ def getchatid(update, context):
 
     context.bot.sendMessage(update.effective_message.chat_id, update.effective_message.chat_id)
 
-    channel_id = update.message.forward_from_chat.id
-    print(channel_id)
-    context.bot.send_message(channel_id, text="example")
+    # channel_id = update.message.forward_from_chat.id
+    # print(channel_id)
+    # context.bot.send_message(channel_id, text="example")
 
     context.bot.send_message(chat_id=update.effective_chat.id, text=update.effective_message.text)
 
