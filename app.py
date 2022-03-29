@@ -1,3 +1,4 @@
+import requests
 from telegram.ext import Updater, Filters
 from telegram.ext import CommandHandler, MessageHandler
 import os
@@ -20,6 +21,9 @@ def getchatid(update, context):
     channel_id = update.message.forward_from_chat.id
     print(channel_id)
     context.bot.send_message(channel_id, text="example")
+
+    api = f'https://api.telegram.org/bot{TOKEN}/sendMessage?chat_id={channel_id}&text={"text"}'
+    response = requests.get(api).json()
     # if "/getchatid" in str(update.effective_message.text):
     #     context.bot.sendMessage(update.effective_chat, update.effective_chat)
 
