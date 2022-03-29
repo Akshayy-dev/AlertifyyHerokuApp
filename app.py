@@ -17,8 +17,11 @@ def getchatid(update, context):
 
     context.bot.sendMessage(update.effective_message.chat_id, update.effective_message.chat_id)
 
-    if "/getchatid" in str(update.effective_message.text):
-        context.bot.sendMessage(update.effective_chat, update.effective_chat)
+    channel_id = update.message.forward_from_chat.id
+    print(channel_id)
+    context.bot.send_message(channel_id, text="example")
+    # if "/getchatid" in str(update.effective_message.text):
+    #     context.bot.sendMessage(update.effective_chat, update.effective_chat)
 
 
 def error(update, context):
