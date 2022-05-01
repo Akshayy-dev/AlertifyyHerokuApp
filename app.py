@@ -16,8 +16,9 @@ def start(update, context):
 def getchatid(update, context):
     print(update.message.chat_id)
     # if update.message.cha != "private":
-
-    context.bot.sendMessage(update.effective_chat.id, update.effective_chat.id)
+    msg = "Your Chat ID is:\n"+ update.effective_chat.id +"\n\nUse the above number in the chat id field when setting up Telegram alerts with Alertifyy."
+    # context.bot.sendMessage(update.effective_chat.id, update.effective_chat.id)
+    context.bot.sendMessage(update.effective_chat.id, msg)
 
     # channel_id = update.message.forward_from_chat.id
     # print(channel_id)
