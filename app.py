@@ -50,7 +50,7 @@ def main():
 
     updater.start_webhook(listen="0.0.0.0",
                           port=os.environ.get("PORT", 443),
-                          url_path=TOKEN, webhook_url="https://alertifyy-telegram-bot.herokuapp.com/" + TOKEN)
+                          url_path=TOKEN, webhook_url="https://dreamy-beijinho-265860.netlify.app/" + TOKEN)
     updater.idle()
 
 
